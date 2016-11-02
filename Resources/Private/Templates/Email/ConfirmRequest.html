@@ -1,0 +1,32 @@
+<p>Hallo {prayerRequest.author},</p>
+<p>Wir haben dein Gebetsanliegen erhalten und beten gerne mit dir.</p>
+<h3>Folgendes Anliegen haben wir erhalten:</h3>
+{prayerRequest.request -> f:format.html()}
+<h3>Du hast dieses Anliegen wie folgt freigegeben:</h3>
+<ul>
+    <li>Dein Name erscheint als: "{prayerRequest.publicAuthor}"</li>
+    <li>
+        <f:switch expression="{prayerRequest.audience}">
+            <f:case value="1">Nur der Pastor kann dein Anliegen sehen.</f:case>
+            <f:case value="2">Dein Anliegen kann von Pastor und Ältesten eingesehen werden.</f:case>
+            <f:case value="3">Dein Anliegen darf an die interne Liste der Gebetsanliegen weitergegeben werden.</f:case>
+            <f:case value="4">Dein Anliegen darf im wöchentlichen Newsletter der Gemeinde veröffentlicht werden.</f:case>
+            <f:case value="5">Dein Anliegen erscheint auf der öffentlichen Internetseite der Volksmission Freudenstadt.</f:case>
+        </f:switch>
+    </li>
+</ul>
+<p><b>Bitte beachte:</b> Alle Gebetsanliegen werden von uns zuerst geprüft, bevor wir sie zur Anzeige freischalten.</p>
+<hr />
+<h3>Du willst dein Anliegen bearbeiten oder löschen?</h3>
+<p>Mit dem folgenden Link kannst du dein Anliegen bearbeiten oder löschen:
+    <f:link.action pageUid="{settings.pid.page}" controller="PrayerRequest" action="edit" arguments="{prayerRequest: prayerRequest, code: prayerRequest.authorCode}">
+        <f:uri.action pageUid="{settings.pid.page}" controller="PrayerRequest" action="edit" arguments="{prayerRequest: prayerRequest, code: prayerRequest.authorCode}" />
+    </f:link.action>
+</p>
+<h3>Dein Gebet wurde erhört?</h3>
+<p>Wenn Gott dein Gebet erhört hat, dann lösche dein Anliegen nicht einfach, sondern lass uns das wissen! Deine Geschichte kann auch andere ermutigen! Hier kannst du sie mit anderen teilen:
+    <f:link.action pageUid="{settings.pid.page}" controller="PrayerRequest" action="edit" arguments="{prayerRequest: prayerRequest, code: prayerRequest.authorCode, answered: 1}">
+        <f:uri.action pageUid="{settings.pid.page}" controller="PrayerRequest" action="edit" arguments="{prayerRequest: prayerRequest, code: prayerRequest.authorCode, answered: 1}" />
+    </f:link.action>
+</p>
+

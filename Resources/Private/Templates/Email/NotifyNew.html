@@ -1,0 +1,24 @@
+<p>Wir haben ein neues Gebetsanliegen erhalten. Bitte überprüfe dieses Anliegen und schalte es wenn nötig frei.</p>
+<h3>Folgendes Anliegen haben wir erhalten:</h3>
+{prayerRequest.request -> f:format.html()}
+<h3>Freigabe:</h3>
+<ul>
+    <li>Mein Name erscheint als: "{prayerRequest.publicAuthor}"</li>
+    <li>
+        <f:switch expression="{prayerRequest.audience}">
+            <f:case value="1">Nur der Pastor kann Mein Anliegen sehen.</f:case>
+            <f:case value="2">Mein Anliegen kann von Pastor und Ältesten eingesehen werden.</f:case>
+            <f:case value="3">Mein Anliegen darf an die interne Liste der Gebetsanliegen weitergegeben werden.</f:case>
+            <f:case value="4">Mein Anliegen darf im wöchentlichen Newsletter der Gemeinde veröffentlicht werden.</f:case>
+            <f:case value="5">Mein Anliegen erscheint auf der öffentlichen Internetseite der Volksmission Freudenstadt.</f:case>
+        </f:switch>
+    </li>
+</ul>
+<hr />
+<h3>Bearbeiten</h3>
+<p>Mit dem folgenden Link kannst du dieses Anliegen freigeben, bearbeiten oder löschen:
+    <f:link.action pageUid="{settings.pid.page}" controller="PrayerRequest" action="edit" arguments="{prayerRequest: prayerRequest, code: prayerRequest.adminCode}">
+        <f:uri.action pageUid="{settings.pid.page}" controller="PrayerRequest" action="edit" arguments="{prayerRequest: prayerRequest, code: prayerRequest.adminCode}" />
+    </f:link.action>
+</p>
+

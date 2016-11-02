@@ -1,0 +1,15 @@
+<p>Für die Beter unserer Gemeinde betreiben wir eine interne Gebetsliste, die dich über aktuelle Gebetsanliegen auf
+dem Laufenden hält. Hier kannst du dich für diese Liste anmelden. Du erhältest dann zunächst eine Bestätigungsnachricht,
+ auf die du antworten musst, um deine E-Mailadresse zu bestätigen. Anschließend muss noch ein Administrator
+ deine Anmeldung bestätigen.</p>
+<f:flashMessages/>
+<f:form action="listSubscribe">
+    <div class="form-group">
+        <label for="email">Deine E-Mailadresse</label>
+        <f:form.textfield name="email" class="form-control" placeholder="du@provider.de" />
+    </div>
+    <div class="form-group">
+        <f:form.submit class="btn btn-primary" value="Anmelden" />
+        <f:link.action action="list" class="btn btn-default">Abbrechen</f:link.action>
+    </div>
+</f:form>

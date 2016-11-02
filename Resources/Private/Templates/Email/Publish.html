@@ -1,0 +1,18 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<p>{address},</p>
+<p>
+    <f:if condition="{plural}">
+        <f:then>Danke für eure Bereitschaft zum Beten! Bitte nehmt doch auch dieses aktuelle Gebetsanliegen mit in eure
+            Gebete auf:
+        </f:then>
+        <f:else>Danke für deine Bereitschaft zum Beten! Bitte nimm doch auch dieses aktuelle Gebetsanliegen mit in deine
+            Gebete auf:
+        </f:else>
+    </f:if>
+</p>
+<hr/>
+<h3>{prayerRequest.publicAuthor} schreibt:</h3>
+{prayerRequest.request -> f:format.html()}
+<hr/>
+<p>Diese Nachricht wurde automatisch über die Internetseite der Volksmission Freudenstadt versendet.<br/>
+    <a href="https://www.volksmission-freudenstadt.de/gebet">https://www.volksmission-freudenstadt.de/gebet</a></p>

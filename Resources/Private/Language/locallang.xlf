@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2016-10-28T16:06:17Z" product-name="vmfds_prayer_requests">
+		<header/>
+		<body>
+			<trans-unit id="tx_vmfdsprayerrequests_domain_model_prayerrequest">
+				<source>Gebetsanliegen</source>
+			</trans-unit>
+			<trans-unit id="tx_vmfdsprayerrequests_domain_model_prayerrequest.author">
+				<source>Autor</source>
+			</trans-unit>
+			<trans-unit id="tx_vmfdsprayerrequests_domain_model_prayerrequest.email">
+				<source>E-Mailadresse</source>
+			</trans-unit>
+			<trans-unit id="tx_vmfdsprayerrequests_domain_model_prayerrequest.public_author">
+				<source>Öffentliche Autorenangabe</source>
+			</trans-unit>
+			<trans-unit id="tx_vmfdsprayerrequests_domain_model_prayerrequest.request">
+				<source>Anliegen</source>
+			</trans-unit>
+			<trans-unit id="tx_vmfdsprayerrequests_domain_model_prayerrequest.story">
+				<source>Zeugnis nach Gebetserhörung</source>
+			</trans-unit>
+			<trans-unit id="tx_vmfdsprayerrequests_domain_model_prayerrequest.status">
+				<source>Status</source>
+			</trans-unit>
+			<trans-unit id="tx_vmfdsprayerrequests_domain_model_prayerrequest.audience">
+				<source>Freigabe</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,28 @@
+<f:layout name="Default"/>
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <f:flashMessages/>
+    <h2>Dafür kannst du beten...</h2>
+
+    <b>{prayerRequest.publicAuthor} schreibt:</b><br />
+    {prayerRequest.request -> f:format.html()}
+    <f:link.action class="btn btn-default" action="list">Zurück zur Liste</f:link.action>
+    <hr />
+    <div class="alert alert-info"><b>Ist das dein Gebetsanliegen?</b> Beim Anlegen hast du eine Bestätigungsnachricht erhalten. Dort findest du einen Link,
+    mit dem du das Anliegen bearbeiten oder löschen kannst. Du hast die Nachricht nicht mehr? Hier kannst du sie
+    <f:link.action action="resendConfirmation" arguments="{prayerRequest: prayerRequest}">
+        neu anfordern.
+    </f:link.action>
+    </div>
+</f:section>

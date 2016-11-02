@@ -1,0 +1,43 @@
+<p>Hallo {prayerRequest.author},</p>
+<p>Du hast uns bestätigt, dass dein Gebetsanliegen erhört wurde. Wir freuen uns mit dir und preisen gemeinsam mit dir
+unseren allmächtigen Gott, der in seiner Gnade immer wieder auch in unser alltägliches Leben eingreift.</p>
+<h3>Folgenden Bericht haben wir erhalten:</h3>
+{prayerRequest.story -> f:format.html()}
+<h3>Wie geht es jetzt weiter?</h3>
+<p>Dein Anliegen bleibt zunächst in unserer Datenbank. Wir geben die Geschichte von deiner Gebetserhörung mit den
+    gleichen Einschränkungen wie das ursprüngliche Anliegen weiter:</p>
+<ul>
+    <li>Dein Name erscheint als: "{prayerRequest.publicAuthor}"</li>
+    <li>
+        <f:switch expression="{prayerRequest.audience}">
+            <f:case value="1">Nur der Pastor kann deinen Bericht sehen.</f:case>
+            <f:case value="2">Dein Bericht kann von Pastor und Ältesten eingesehen werden.</f:case>
+            <f:case value="3">Dein Bericht darf an die interne Liste der Gebetsanliegen weitergegeben werden.</f:case>
+            <f:case value="4">Dein Bericht darf im wöchentlichen Newsletter der Gemeinde veröffentlicht werden.</f:case>
+            <f:case value="5">Dein Bericht erscheint auf der öffentlichen Internetseite der Volksmission Freudenstadt.</f:case>
+        </f:switch>
+    </li>
+</ul>
+<hr />
+<h3>Du willst dein Anliegen löschen?</h3>
+<p>Mit dem folgenden Link kannst du dein Anliegen weiterhin bearbeiten oder löschen:
+    <f:link.action pageUid="{settings.pid.page}" controller="PrayerRequest" action="edit" arguments="{prayerRequest: prayerRequest, code: prayerRequest.authorCode, answered: 0}">
+        <f:uri.action pageUid="{settings.pid.page}" controller="PrayerRequest" action="edit" arguments="{prayerRequest: prayerRequest, code: prayerRequest.authorCode, answered: 0}" />
+    </f:link.action>
+</p>
+<h3>Anderen Mut machen</h3>
+<p>Wir glauben, dass jeder Bericht von einem erhörten Gebet anderen Menschen Mut machen kann, die selbst
+noch für ein Anliegen beten. Deshalb laden wir dich ein, an einem der nächsten Sonntage auf unserem
+    "Gute-Nachrichten-Sofa" von deiner Gebetserhörung zu berichten.</p>
+<h3>Weiter beten</h3>
+<p>Dein Gebet wurde erhört. Das ist gut! Lass uns trotzdem weiter beten. Andere warten noch darauf, dass etwas geschieht.
+Auf
+    <f:link.action pageUid="{settings.pid.page}" controller="PrayerRequest" action="list" >
+        <f:uri.action pageUid="{settings.pid.page}" controller="PrayerRequest" action="list" />
+    </f:link.action>
+findest du die uns bekannten Anliegen, die wir veröffentlichen dürfen. Weitere Anliegen findest du in unserem
+    wöchentlichen Newsletter und auf unserer
+    <f:link.action pageUid="{settings.pid.page}" controller="PrayerRequest" action="listSignup" >
+        internen Gebetsliste
+    </f:link.action>.
+</p>

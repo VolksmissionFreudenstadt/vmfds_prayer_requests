@@ -1,0 +1,140 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    62,
+                    66
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": []
+                },
+                "name": "PrayerRequest",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "242001168316"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "author",
+                            "propertyType": "String",
+                            "uid": "1234615169158"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "publicAuthor",
+                            "propertyType": "String",
+                            "uid": "1189967411340"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "request",
+                            "propertyType": "Text",
+                            "uid": "410351005350"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "status",
+                            "propertyType": "Integer",
+                            "uid": "205863834280"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "audience",
+                            "propertyType": "Integer",
+                            "uid": "116962842635"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [],
+        "description": "",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 7.6.0-7.6.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "7.6.0-7.6.99",
+            "version": ""
+        },
+        "extensionKey": "vmfds_prayer_requests",
+        "name": "VMFDS",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "Volksmission Freudenstadt",
+                "email": "christoph.fischer@volksmission.de",
+                "name": "Christoph Fischer",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "PrayerRequest => list,show,create,new,edit,update,delete",
+                    "noncacheableActions": "PrayerRequest => create,update,delete",
+                    "switchableActions": ""
+                },
+                "key": "requests",
+                "name": "VMFDS"
+            }
+        ],
+        "vendorName": "VMFDS"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2016-10-28 04:06",
+        "extension_builder_version": "7.6.0",
+        "be_user": "Christoph Fischer (1)"
+    }
+}

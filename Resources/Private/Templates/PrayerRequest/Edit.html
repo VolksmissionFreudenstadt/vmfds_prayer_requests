@@ -1,0 +1,32 @@
+
+<f:layout name="Default" />
+
+This template displays a EDIT form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Edit.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Gebetsanliegen bearbeiten</h1>
+
+<f:flashMessages />
+
+<f:render partial="FormErrors" arguments="{object:PrayerRequest}" />
+    <f:form action="{f:if(condition: '{answered}', then: 'answered', else: 'update')}" name="prayerRequest" object="{prayerRequest}" >
+
+
+    <f:render partial="PrayerRequest/FormFields" arguments="{_all}" />
+	<f:form.submit class="btn btn-primary" value="Speichern" />
+    <f:if condition="{answered}"><f:else>
+        <f:link.action class="btn btn-success" action="edit" arguments="{prayerRequest: prayerRequest, code: prayerRequest.authorCode, answered: 1}">Mein Gebet wurde erhört!</f:link.action>
+        <f:link.action class="btn btn-danger" action="delete" arguments="{prayerRequest: prayerRequest}">Löschen</f:link.action>
+    </f:else></f:if>
+    <f:link.action class="btn btn-default" action="show" arguments="{prayerRequest: prayerRequest}">Abbrechen</f:link.action>
+</f:form>
+</f:section>

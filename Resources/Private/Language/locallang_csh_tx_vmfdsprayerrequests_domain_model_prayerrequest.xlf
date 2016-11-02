@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-10-28T16:06:17Z" product-name="vmfds_prayer_requests">
+		<header/>
+		<body>
+			<trans-unit id="author.description">
+				<source>author</source>
+			</trans-unit>
+			<trans-unit id="public_author.description">
+				<source>publicAuthor</source>
+			</trans-unit>
+			<trans-unit id="request.description">
+				<source>request</source>
+			</trans-unit>
+			<trans-unit id="status.description">
+				<source>status</source>
+			</trans-unit>
+			<trans-unit id="audience.description">
+				<source>audience</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

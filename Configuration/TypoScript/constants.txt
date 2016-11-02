@@ -1,0 +1,37 @@
+
+plugin.tx_vmfdsprayerrequests_requests {
+	view {
+		# cat=plugin.tx_vmfdsprayerrequests_requests/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:vmfds_prayer_requests/Resources/Private/Templates/
+		# cat=plugin.tx_vmfdsprayerrequests_requests/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:vmfds_prayer_requests/Resources/Private/Partials/
+		# cat=plugin.tx_vmfdsprayerrequests_requests/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:vmfds_prayer_requests/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_vmfdsprayerrequests_requests//a; type=string; label=Ordner mit den Gebetsanliegen
+		storagePid =
+	}
+
+	settings {
+		# cat=plugin.tx_vmfdsprayerrequests_requests//a; type=string; label=Anzuzeigende Freigabegruppe
+		audience = 5
+		# cat=plugin.tx_vmfdsprayerrequests_requests//a; type=string; label=Seite für die Anzeige von Anliegen
+		pid.page =
+		mail {
+			# cat=plugin.tx_vmfdsprayerrequests_requests//a; type=string; label=E-Mailadresse (Absender)
+			from =
+			# cat=plugin.tx_vmfdsprayerrequests_requests//a; type=string; label=E-Mailadresse (Adminstrator)
+			admin =
+			# cat=plugin.tx_vmfdsprayerrequests_requests//a; type=string; label=E-Mailadresse (Pastor)
+			pastor =
+			# cat=plugin.tx_vmfdsprayerrequests_requests//a; type=string; label=E-Mailadresse (Älteste)
+			elders =
+			# cat=plugin.tx_vmfdsprayerrequests_requests//a; type=string; label=E-Mailadresse (Mailingliste)
+			list =
+			# cat=plugin.tx_vmfdsprayerrequests_requests//a; type=string; label=Requestadresse für die Mailingliste
+			list.request =
+		}
+
+	}
+}

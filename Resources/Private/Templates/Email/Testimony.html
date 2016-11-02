@@ -1,0 +1,16 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<p>{address},</p>
+<p>
+    <f:if condition="{plural}">
+        <f:then>Den folgenden Bericht über eine Gebetserhörung wollen wir euch nicht vorenthalten:</f:then>
+        <f:else>Den folgenden Bericht über eine Gebetserhörung wollen wir dir nicht vorenthalten:</f:else>
+    </f:if>
+</p>
+<hr/>
+<h3>{prayerRequest.publicAuthor} hatte uns geschreiben:</h3>
+{prayerRequest.request -> f:format.html()}
+<h3>Nun ist Folgendes passiert:</h3>
+{prayerRequest.story -> f:format.html()}
+<hr/>
+<p>Diese Nachricht wurde automatisch über die Internetseite der Volksmission Freudenstadt versendet.<br/>
+    <a href="https://www.volksmission-freudenstadt.de/gebet">https://www.volksmission-freudenstadt.de/gebet</a></p>

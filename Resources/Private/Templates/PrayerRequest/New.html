@@ -1,0 +1,28 @@
+
+<f:layout name="Default" />
+
+This template displays a NEW form for the current domain object.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        New.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Dein Gebetsanliegen</h1>
+    <p>Du möchtest uns ein eigenes Gebetsanliegen mitteilen? Dann bist du hier genau richtig! Gerne beten wir für das,
+        was dir auf dem Herzen liegt.</p>
+
+<f:flashMessages />
+<f:render partial="FormErrors" arguments="{object:PrayerRequest}" />
+
+<f:form action="create"  name="newPrayerRequest" object="{newPrayerRequest}">
+<f:render partial="PrayerRequest/FormFields" />
+	<f:form.submit value="Absenden" class="btn btn-primary"/>
+    <f:link.action action="list" class="btn btn-default">Abbrechen</f:link.action>
+</f:form>
+</f:section>

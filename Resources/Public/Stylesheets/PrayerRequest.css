@@ -1,0 +1,12 @@
+div.prayerRow {
+    padding: 10px 0 10px 0;
+}
+
+div.prayerRow.even {
+    background-color: #ededed;
+}
+
+div.prayerRow:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}

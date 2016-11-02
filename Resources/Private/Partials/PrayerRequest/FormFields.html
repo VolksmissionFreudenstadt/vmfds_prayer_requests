@@ -1,0 +1,117 @@
+<f:form.hidden name="editMode" value="{editMode}"/>
+<f:form.hidden id="statusChange" name="statusChange" value="0"/>
+<f:if condition="{answered}">
+    <f:then>
+        <h3>So wird der Bericht aussehen:</h3>
+        <b>{prayerRequest.publicAuthor} hatte uns dieses Gebetsanliegen geschrieben:</b><br />
+        {prayerRequest.request -> f:format.html()}
+        <div class="form-group">
+            <label for="request">
+                Jetzt ist Folgendes passiert:
+            </label>
+            <f:form.textarea id="inputSuccessStory" class="form-control" property="story" cols="40" rows="15"
+            placeholder="Erzähle uns von deiner Gebetserhörung..."/>
+        </div>
+    </f:then>
+    <f:else>
+        <f:if condition="{editMode} == 2">
+            <h3>Freigabe</h3>
+            <div class="form-group">
+                <label for="status">
+                    Freigabestatus
+                </label>
+                <f:form.select id="selectStatus" class="form-control" property="status"
+                               options="{0: 'nicht freigegeben', 1: 'freigegeben'}"/>
+            </div>
+            <h3>Daten</h3>
+        </f:if>
+
+        <div class="form-group">
+            <label for="author">
+                Dein Name
+            </label>
+            <f:form.textfield id="authorRealName" class="form-control" property="author"
+                              placeholder="Vorname Nachname"/>
+        </div>
+        <f:form.hidden property="publicAuthor" id="publicAuthor"/>
+        <div class="form-group">
+            <label for="publicAuthor">
+                In welcher Form soll dein Name öffentlich erscheinen?
+            </label>
+            <br/><i>Anmerkung: Der Pastor kann auf jeden Fall deinen vollen Namen einsehen.</i>
+            <select id="publicAuthorSelect" class="form-control">
+                <option value="1">Mein Name soll wie oben angegeben erscheinen.</option>
+                <option value="2">Nur mein Vorname soll angezeigt werden.</option>
+                <option value="3">Es soll nur eine Abkürzung (z.B. "F." für "Fritz") angezeigt werden</option>
+                <option value="4">Ich möchte anonym bleiben (z.B. "ein Bruder", "eine Schwester", "eine Person").
+                </option>
+            </select>
+        </div>
+        <div class="alert alert-warning" id="alertGenderSelect">
+            <b>Bitte wähle:</b>
+            <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="anonymousPerson" value="1" checked> eine Person
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="anonymousBrother" value="2"> ein Bruder
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="anonymousSister" value="3"> eine Schwester
+            </label>
+        </div>
+        <div class="alert alert-info"><b>So wird dein Name angezeigt: </b><span id="showPublicAuthor"></span></div>
+        <div class="form-group">
+            <label for="email">
+                Deine E-Mailadresse
+            </label>
+            <f:form.textfield class="form-control" property="email" placeholder="du@provider.de"/>
+        </div>
+        <div class="form-group">
+            <label for="request">
+                Dein Gebetsanliegen
+            </label>
+            <f:form.textarea class="form-control" property="request" cols="40" rows="15"/>
+        </div>
+        <div class="form-group">
+            <label for="audience">
+                Wer darf dein Gebetsanliegen sehen?
+            </label><br/>
+            <i>Anmerkung: Jede Gruppe schließt die vorherigen mit ein.</i>
+        </div>
+        <div class="radio">
+            <label>
+                <f:form.radio property="audience" value="1"/>
+                Nur der <b>Pastor</b> darf mein Gebetsanliegen sehen.
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <f:form.radio property="audience" value="2"/>
+                Die <b>Ältesten</b> dürfen mein Gebetsanliegen sehen.
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <f:form.radio id="defaultAudience" property="audience" value="3"/>
+                Mein Gebetsanliegen darf an die <b>interne E-Mailliste der Fürbitter</b> weitergegeben werden.
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <f:form.radio property="audience" value="4"/>
+                Mein Gebetsanliegen darf im <b>wöchentlichen Newsletter der Gemeinde</b> erwähnt werden.
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <f:form.radio property="audience" value="5"/>
+                Mein Gebetsanliegen darf <b>auf dieser Internetseite öffentlich</b> erwähnt werden.
+            </label>
+        </div>
+    </f:else>
+</f:if>
+
+
+
+
+

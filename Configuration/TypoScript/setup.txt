@@ -1,0 +1,64 @@
+
+plugin.tx_vmfdsprayerrequests_requests {
+	features.skipDefaultArguments = 1
+	settings {
+		audience = {$plugin.tx_vmfdsprayerrequests_requests.settings.audience}
+		pid.page  = {$plugin.tx_vmfdsprayerrequests_requests.settings.pid.page}
+		mail {
+			from = {$plugin.tx_vmfdsprayerrequests_requests.settings.mail.from}
+			admin = {$plugin.tx_vmfdsprayerrequests_requests.settings.mail.admin}
+			pastor = {$plugin.tx_vmfdsprayerrequests_requests.settings.mail.pastor}
+			elders = {$plugin.tx_vmfdsprayerrequests_requests.settings.mail.elders}
+			list = {$plugin.tx_vmfdsprayerrequests_requests.settings.mail.list}
+			list.request = {$plugin.tx_vmfdsprayerrequests_requests.settings.mail.list.request}
+		}
+	}
+	view {
+		templateRootPaths.0 = {$plugin.tx_vmfdsprayerrequests_requests.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_vmfdsprayerrequests_requests.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_vmfdsprayerrequests_requests.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_vmfdsprayerrequests_requests.persistence.storagePid}
+	}
+}
+
+plugin.tx_vmfdsprayerrequests._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-vmfds-prayer-requests table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-vmfds-prayer-requests table th {
+		font-weight:bold;
+	}
+
+	.tx-vmfds-prayer-requests table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+page.includeCSS.prayerRequest = EXT:vmfds_prayer_requests/Resources/Public/Stylesheets/PrayerRequest.css
+
+page.includeJSFooter {
+	prayerRequests = EXT:vmfds_prayer_requests/Resources/Public/Javascript/PrayerRequest.js
+}
