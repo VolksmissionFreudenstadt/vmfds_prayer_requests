@@ -1,0 +1,31 @@
+{
+  "name": "vmfds/vmfds_prayer_requests",
+  "description": "A typo3 extension to collect, distribute and show prayer requests",
+  "type": "typo3-cms-extension",
+  "homepage": "https://github.com/VolksmissionFreudenstadt/vmfds_prayer_requests",
+  "authors": [
+    {
+      "name": "Christoph Fischer",
+      "role": "Developer",
+      "email": "christoph.fischer@volksmission.de",
+      "homepage": "http://www.volksmission-freudenstadt.de/"
+    }
+  ],
+  "license": "GPL-3.0+",
+  "replace": {
+    "vmfds_prayer_requests": "self.version"
+  },
+  "require": {
+    "typo3/cms-core": "~7.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "VMFDS\\VmfdsPrayerRequests\\": "Classes/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "VMFDS\\VmfdsPrayerRequests\\Tests": "Tests/"
+    }
+  }
+}
