@@ -11,24 +11,26 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'Gebetsanliegen',
-	'description' => '',
-	'category' => 'plugin',
-	'author' => 'Christoph Fischer',
-	'author_email' => 'christoph.fischer@volksmission.de',
-	'state' => 'alpha',
-	'internal' => '',
-	'uploadfolder' => '0',
-	'createDirs' => '',
-	'clearCacheOnLoad' => 0,
-	'version' => '',
-	'constraints' => array(
-		'depends' => array(
-			'typo3' => '7.6.0-7.6.99',
-		),
-		'conflicts' => array(
-		),
-		'suggests' => array(
-		),
-	),
-);
+    'title' => 'Gebetsanliegen',
+    'description' => '',
+    'category' => 'plugin',
+    'author' => 'Christoph Fischer',
+    'author_email' => 'christoph.fischer@volksmission.de',
+    'state' => 'alpha',
+    'internal' => '',
+    'uploadfolder' => '0',
+    'createDirs' => '',
+    'clearCacheOnLoad' => 0,
+    'version' => '',
+    'constraints' => array(
+        'depends' => array(
+            'typo3' => '7.6.0-7.6.99',
+        ),
+        'conflicts' => array(),
+        'suggests' => array(),
+    ),
+    'autoload' =>
+        array(
+            'psr-4' => array('VMFDS\\VmfdsPrayerRequests\\' => 'Classes')
+        ),
+    );
